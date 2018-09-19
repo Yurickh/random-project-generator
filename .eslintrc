@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:jest/recommended"],
+  "plugins": ["jest"],
+  "rules": {
+    "semi": ["error", "never"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-one-expression-per-line": [true, { "allow": "none" }]
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "fetch": true
+  }
+}
