@@ -1,5 +1,9 @@
 import React from 'react'
+
 import logo from './logo.svg'
+import getAllFromCollection from './helpers/getAllFromCollection'
+import sample from './helpers/sample'
+
 import './App.css'
 
 export default class App extends React.Component {
@@ -7,25 +11,38 @@ export default class App extends React.Component {
     goal: '',
     tech: '',
     limitation: '',
+
+    availableGoals: [],
+    availableTechs: [],
+    availableLimitations: [],
   }
 
-  randomizeGoal = () => {
-    this.setState({
-      goal: 'a cool goal',
-    })
+  componentDidMount() {
+    Promise.all([
+      getAllFromCollection('goals'),
+      getAllFromCollection('techs'),
+      getAllFromCollection('limitations'),
+    ])
+      .then(([availableGoals, availableTechs, availableLimitations]) => {
+        this.setState({
+          availableGoals,
+          availableTechs,
+          availableLimitations,
+        })
+      })
   }
 
-  randomizeLimitation = () => {
-    this.setState({
-      limitation: 'a funny limitation',
-    })
-  }
+  randomizeGoal = () => this.setState(state => ({
+    goal: sample(state.availableGoals).name,
+  }))
 
-  randomizeTech = () => {
-    this.setState({
-      tech: 'an blazing fast tech',
-    })
-  }
+  randomizeLimitation = () => this.setState(state => ({
+    limitation: sample(state.availableLimitations).name,
+  }))
+
+  randomizeTech = () => this.setState(state => ({
+    tech: sample(state.availableTechs).name,
+  }))
 
   render() {
     return (
