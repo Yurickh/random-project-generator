@@ -6,6 +6,7 @@
     "semi": ["error", "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/destructuring-assignment": 0,
+    "react/no-unused-state": 0,
     "react/jsx-one-expression-per-line": [true, { "allow": "none" }]
   },
   "env": {
