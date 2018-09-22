@@ -1,5 +1,10 @@
+body {
+  background-color: rgba(232, 232, 233, .5);
+}
+
 .App {
   text-align: center;
+  font-family: Gilroy;
 }
 
 .App-logo {
@@ -8,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #35383c;
   height: 150px;
   padding: 20px;
   color: white;
@@ -19,7 +24,31 @@
 }
 
 .App-intro {
+  display: flex;
   font-size: large;
+  width: 100%;
+
+  margin-top: 1em;
+}
+
+.App-intro > section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 1em;
+}
+
+.App-intro > section > button {
+  background-color: #523AFF;
+  color: white;
+  text-transform: uppercase;
+  padding: 16px;
+  font-size: 1.25em;
+  border: none;
+  border-radius: 5px;
+
+  margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {
