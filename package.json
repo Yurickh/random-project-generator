@@ -7,7 +7,7 @@
     "firebase-tools": "^4.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
